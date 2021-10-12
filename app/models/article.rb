@@ -12,7 +12,6 @@ class Article < ApplicationRecord
                     length: {minimum: 1,maximum: 4}
 
   def self.find_yesterday
-    #where('created_at < ?', Date.today)
     where(DateModule.find_before_today)
   end
 
