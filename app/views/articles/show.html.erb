@@ -1,0 +1,34 @@
+	<p>
+		以下内容是表单提交后反馈的信息
+	</p>
+
+	<p>
+		<%= @article.title %>
+	</p>
+	<p>
+		<%= @article.text %>
+	</p>
+
+	<h2>评论信息</h2>
+	<%= render @article.comments %>
+
+<!-- 	<% @article.comments.each do |comment| %>
+	  <p>
+	  	  <strong>评论人:</strong>
+	  	  <%= comment.commenter %>
+	  </p>
+	  <p>
+	  	  <strong>评论内容：</strong>
+	  	  <%= comment.body %>
+	  </p>
+    <% end %> -->
+
+	<h2>添加一条评论</h2>
+	<%= render 'comments/form' %>
+
+	<p>
+		<%= link_to '编辑页面', edit_article_path(@article) %> 
+	</p>
+	<p>
+		<%= link_to '退回首页', articles_path %>
+	</p>
